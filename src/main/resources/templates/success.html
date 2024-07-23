@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Success</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+<div class="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-lg">
+  <h1 class="text-2xl font-bold mb-4">URL Parsed Successfully</h1>
+  <p>Your URL was parsed and stored successfully!</p>
+  <div class="mt-4">
+    <h2 class="text-xl font-semibold">OG Data:</h2>
+    <ul id="ogDataList"></ul>
+  </div>
+  <a href="/" class="bg-blue-500 text-white px-4 py-2 rounded mt-4 inline-block">Parse Another URL</a>
+</div>
+<script>
+  const ogResults = JSON.parse(localStorage.getItem('ogResults'));
+  const ogDataList = document.getElementById('ogDataList');
+  for (const [key, value] of Object.entries(ogResults)) {
+      const li = document.createElement('li');
+      li.innerHTML = `<strong>${key}</strong>: ${value}`;
+      ogDataList.appendChild(li);
+  }
+</script>
+</body>
+</html>
