@@ -4,7 +4,7 @@ Simply run the program in your terminal to parse your URL to find issues. Best u
 
 ## Running Locally
 
-To run the application locally, clone the repository and execute the following commands:
+To run the application locally, clone the repository, download maven onto your computer, and execute the following commands:
 
 ```sh
 mvn compile exec:java -Dexec.mainClass=com.example.pomparser.Main
